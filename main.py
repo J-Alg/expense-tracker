@@ -4,14 +4,17 @@ from expenses import get_expense, display_expenses
 expenses = []
 
 while True:
-    choice = input("Add a new expense (y/n)? ").strip().lower()
+    print("Menu: \n1. Add Expense \n2. View Expenses \n3. Exit")
+    choice = input("Please select an option (1-3): ").strip()
 
-    if choice not in ("y", "yes", "n", "no"):
-        print("Invalid input please enter 'y' or 'n'.")
-        continue
-    elif choice in ("n", "no"):
+    if choice == "1":
+        expense = get_expense()
+        expenses.append(expense)
+    elif choice == "2":
+        display_expenses(expenses)
+        input("\nPress any key to return to the main menu: ")
+    elif choice == "3":
+        print("Exiting the program. Goodbye!")
         break
-
-    expense = get_expense()
-    expenses.append(expense)
-display_expenses(expenses)
+    else:
+        print("Invalid choice. Please select a valid option (1-3).")
