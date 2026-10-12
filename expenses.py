@@ -36,11 +36,14 @@ def display_expenses(expenses):
         print("No expenses recorded yet.")
         return
 
-    print("\nRecorded Expenses:")
+    print(f"\n{"-"*30}Recorded Expenses{"-"*30}")
     for expense in expenses:
-        print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}\n")
-        print("-" * 20)
+        print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}")
 
 def save_expenses(expenses, filename="expenses.json"):
     with open(filename, "w") as file:
         json.dump(expenses, file, indent=4)
+
+def calculate_total(expenses):
+    total = sum(expense["amount"] for expense in expenses)
+    return total

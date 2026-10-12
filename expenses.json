@@ -3,5 +3,10 @@
         "name": "Kroger",
         "category": "Food",
         "amount": 20.0
+    },
+    {
+        "name": "Walmart",
+        "category": "Food",
+        "amount": 50.0
     }
 ]
