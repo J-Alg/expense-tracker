@@ -1,5 +1,5 @@
 
-from expenses import get_expense, display_expenses, save_expenses, load_expenses, calculate_total
+from expenses import get_expense, display_expenses, save_expenses, load_expenses, calculate_total, calculate_category_totals
 
 expenses = load_expenses()
 
@@ -13,7 +13,11 @@ while True:
     elif choice == "2":
         display_expenses(expenses)
         total_expenses = calculate_total(expenses)
+        category_totals = calculate_category_totals(expenses)
         print(f"\nTotal Expenses: ${total_expenses:.2f}")
+        print(f"\nCategory Totals: ")
+        for category, total in category_totals:
+            print(f"{category}: ${total:.2f}")
         print("\n" + "-"*78)
         input("Press any key to return to the main menu: ")
     elif choice == "3":

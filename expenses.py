@@ -47,3 +47,15 @@ def save_expenses(expenses, filename="expenses.json"):
 def calculate_total(expenses):
     total = sum(expense["amount"] for expense in expenses)
     return total
+
+def calculate_category_totals(expenses):
+    category_totals = {}
+    for expense in expenses:
+        category = expense["category"]
+        amount = expense["amount"]
+        if category in category_totals:
+            category_totals[category] += amount
+        else:
+            category_totals[category] = amount
+    return sorted(category_totals.items(), key=lambda x: x[1], reverse=True)
+    

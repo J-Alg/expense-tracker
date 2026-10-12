@@ -8,5 +8,20 @@
         "name": "Walmart",
         "category": "Food",
         "amount": 50.0
+    },
+    {
+        "name": "Pennymac",
+        "category": "Mortgage",
+        "amount": 1800.0
+    },
+    {
+        "name": "Att",
+        "category": "Phone",
+        "amount": 50.0
+    },
+    {
+        "name": "Car Note",
+        "category": "Car Payment",
+        "amount": 756.0
     }
 ]
