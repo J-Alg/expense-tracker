@@ -1,3 +1,5 @@
+import json
+
 def get_expense():
     expense_name = input("Please enter expense name: ").strip().title()
 
@@ -30,3 +32,7 @@ def display_expenses(expenses):
     for expense in expenses:
         print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}\n")
         print("-" * 20)
+
+def save_expenses(expenses, filename="expenses.json"):
+    with open(filename, "w") as file:
+        json.dump(expenses, file, indent=4)
