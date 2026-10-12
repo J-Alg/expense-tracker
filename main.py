@@ -1,7 +1,7 @@
 
-from expenses import get_expense, display_expenses, save_expenses
+from expenses import get_expense, display_expenses, save_expenses, load_expenses
 
-expenses = []
+expenses = load_expenses()
 
 while True:
     print("Menu: \n1. Add Expense \n2. View Expenses \n3. Save and Exit")

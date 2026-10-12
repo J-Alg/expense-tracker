@@ -1,5 +1,13 @@
 import json
 
+def load_expenses(filename="expenses.json"):
+    try: 
+        with open(filename, "r") as file:
+            expenses = json.load(file)
+            return expenses
+    except FileNotFoundError:
+        return []
+
 def get_expense():
     expense_name = input("Please enter expense name: ").strip().title()
 
