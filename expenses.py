@@ -20,4 +20,13 @@ def get_expense():
     expense = {"name": expense_name, "category": category, "amount": amount}
     return expense
 
-    
+
+def display_expenses(expenses):
+    if not expenses:
+        print("No expenses recorded yet.")
+        return
+
+    print("\nRecorded Expenses:")
+    for expense in expenses:
+        print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}\n")
+        print("-" * 20)

@@ -1,11 +1,10 @@
 
-from expenses import get_expense
+from expenses import get_expense, display_expenses
 
 expenses = []
 
 while True:
-    quit = input("Add a new expense (y/n)? ").strip().lower()
-    choice = quit
+    choice = input("Add a new expense (y/n)? ").strip().lower()
 
     if choice not in ("y", "yes", "n", "no"):
         print("Invalid input please enter 'y' or 'n'.")
@@ -15,5 +14,4 @@ while True:
 
     expense = get_expense()
     expenses.append(expense)
-print(expenses)
-    
+display_expenses(expenses)
