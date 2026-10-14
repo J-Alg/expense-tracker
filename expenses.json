@@ -23,5 +23,15 @@
         "name": "Car Note",
         "category": "Car Payment",
         "amount": 756.0
+    },
+    {
+        "name": "Best Buy",
+        "category": "Credit Card",
+        "amount": 35.0
+    },
+    {
+        "name": "Cwl",
+        "category": "Electric",
+        "amount": 50.0
     }
 ]
