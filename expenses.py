@@ -1,4 +1,5 @@
 import json
+import datetime
 
 def load_expenses(filename="expenses.json"):
     try: 
@@ -25,9 +26,11 @@ def get_expense():
         except ValueError:
             print("Enter expense as decimal value (ex: 25.00)")
             continue
-         
 
-    expense = {"name": expense_name, "category": category, "amount": amount}
+    expense_date = datetime.datetime.now().strftime("%Y-%m-%d") 
+
+
+    expense = {"name": expense_name, "category": category, "amount": amount, "date": expense_date}
     return expense
 
 
@@ -38,7 +41,7 @@ def display_expenses(expenses):
 
     print(f"\n{"-"*30}Recorded Expenses{"-"*30}")
     for expense in expenses:
-        print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}")
+        print(f"\nExpense: {expense['name']}\nCategory: {expense['category']}\nAmount:${expense['amount']:.2f}\nDate: {expense['date']}")
 
 def save_expenses(expenses, filename="expenses.json"):
     with open(filename, "w") as file:
