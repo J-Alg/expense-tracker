@@ -1,6 +1,6 @@
 
 import time
-from expenses import get_expense, display_expenses, save_expenses, load_expenses, calculate_total, calculate_category_totals
+from expenses import get_expense, display_expenses, save_expenses, load_expenses, calculate_total, calculate_category_totals, filter_expenses_by_category
 
 
 expenses = load_expenses()
@@ -22,12 +22,16 @@ while True:
             for category, total in category_totals:
                 print(f"{category}: ${total:.2f}")
             print("\n" + "-"*78)
-            menu_choice = input("Would you like to: \n1. Add another expense? \n2. Return to Main Menu \nPlease select an option (1-2): ").strip()
+            menu_choice = input("Would you like to: \n1. Add another expense? \n2. Filter expenses by category \n3. Return to Main Menu \nPlease select an option (1-2): ").strip()
             match menu_choice:
                 case "1":
                     expense = get_expense()
                     expenses.append(expense)
                 case "2":
+                    filter_category = input("Enter the category to filter by: ").strip().lower()
+                    filtered_expenses = filter_expenses_by_category(expenses, filter_category)
+                    display_expenses(filtered_expenses)
+                case "3":
                     continue       
                 case _:
                     print("Invalid choice. Returning to the main menu.")

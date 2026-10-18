@@ -61,4 +61,8 @@ def calculate_category_totals(expenses):
         else:
             category_totals[category] = amount
     return sorted(category_totals.items(), key=lambda x: x[1], reverse=True)
+
+def filter_expenses_by_category(expenses, category):
+    filtered_expenses = [expense for expense in expenses if expense["category"].lower() == category.lower()]
+    return filtered_expenses
     

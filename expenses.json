@@ -4,5 +4,35 @@
         "category": "Food",
         "amount": 100.0,
         "date": "2026-10-14"
+    },
+    {
+        "name": "Pennymac",
+        "category": "Mortgage",
+        "amount": 1800.0,
+        "date": "2026-10-18"
+    },
+    {
+        "name": "Cwl",
+        "category": "Electric",
+        "amount": 190.0,
+        "date": "2026-10-18"
+    },
+    {
+        "name": "Kroger",
+        "category": "Food",
+        "amount": 167.0,
+        "date": "2026-10-18"
+    },
+    {
+        "name": "Jcpenny",
+        "category": "Misc",
+        "amount": 125.0,
+        "date": "2026-10-18"
+    },
+    {
+        "name": "Target",
+        "category": "Misc",
+        "amount": 153.0,
+        "date": "2026-10-18"
     }
 ]
