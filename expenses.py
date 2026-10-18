@@ -1,24 +1,6 @@
 import json
 from datetime import date
-
-def main_menu():
-    print("\nExpense Tracker Menu")
-    print("1. Add Expense")
-    print("2. View Expenses")
-    print("3. Save and Exit")
-    choice = input("Please select an option (1-3): ").strip()
-    return choice
-
-def view_expenses_menu():
-    print("\nView Expenses Menu")
-    print("1. View All Expenses")
-    print("2. Filter Expenses by Category")
-    print("3. Return to Main Menu")
-
-    menu_choice = input("Please select an option (1-3): ").strip()
-    return menu_choice
-    
-
+ 
 def load_expenses(filename="expenses.json"):
     try: 
         with open(filename, "r") as file:
