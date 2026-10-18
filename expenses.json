@@ -34,5 +34,17 @@
         "category": "Misc",
         "amount": 153.0,
         "date": "2026-10-18"
+    },
+    {
+        "name": "Kroger",
+        "category": "Food",
+        "amount": 26.0,
+        "date": "2026-10-18"
+    },
+    {
+        "name": "Att",
+        "category": "Phone",
+        "amount": 30.0,
+        "date": "2026-10-18"
     }
 ]
