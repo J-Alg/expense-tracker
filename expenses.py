@@ -11,7 +11,6 @@ def load_expenses(filename="expenses.json"):
 
 def get_expense():
     expense_name = input("Please enter expense name: ").strip().title()
-
     category = input("What category are you assigning this expense to (e.g Food, Mortgage, Misc)? ").strip().title()
 
     while True:
@@ -26,10 +25,7 @@ def get_expense():
         except ValueError:
             print("Enter expense as decimal value (ex: 25.00)")
             continue
-
     expense_date = date.today().strftime("%Y-%m-%d") 
-
-
     expense = {"name": expense_name, "category": category, "amount": amount, "date": expense_date}
     return expense
 
@@ -48,8 +44,7 @@ def save_expenses(expenses, filename="expenses.json"):
         json.dump(expenses, file, indent=4)
 
 def calculate_total(expenses):
-    total = sum(expense["amount"] for expense in expenses)
-    return total
+    return sum(expense["amount"] for expense in expenses)
 
 def calculate_category_totals(expenses):
     category_totals = {}
@@ -63,6 +58,6 @@ def calculate_category_totals(expenses):
     return sorted(category_totals.items(), key=lambda x: x[1], reverse=True)
 
 def filter_expenses_by_category(expenses, category):
-    filtered_expenses = [expense for expense in expenses if expense["category"].lower() == category.lower()]
-    return filtered_expenses
+    return [expense for expense in expenses if expense["category"].lower() == category.lower()]
+    # return filtered_expenses
     

@@ -1,4 +1,3 @@
-
 import time
 from expenses import get_expense, display_expenses, save_expenses, load_expenses, filter_expenses_by_category, calculate_total, calculate_category_totals
 
@@ -44,7 +43,7 @@ while True:
                     category = input("Enter the category to filter by: ")
                     filtered_expenses = filter_expenses_by_category(expenses, category)
                     if not filtered_expenses:
-                        print(f"\nNo expense found for category: {category.title()}")
+                        print(f"\nNo expenses found for category: {category.title()}")
                     else:
                         display_expenses(filtered_expenses)
                         filter_total = calculate_total(filtered_expenses)
